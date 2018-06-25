@@ -23,11 +23,11 @@ public enum ResponseType {
 			break;
 		}
 		try {
-			//timestamps to real date
+			// timestamps to real date
 			mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 			mapper.setDateFormat(df);
-			
-			//jackson generates object as string
+
+			// jackson generates object as string
 			return mapper.writeValueAsString(object);
 		} catch (Exception e) {
 			e.printStackTrace();
