@@ -47,7 +47,7 @@
           applications
         WHERE
           CONTACT_ID = #{contactId}
-        ORDER_BY
+        ORDER BY
           DT_CREATED DESC
         LIMIT 1
     </select>
