@@ -10,7 +10,7 @@ public class Application {
 	private int contactId;
 	private Date dtCreated;
 	private String productName;
-	
+
 	@JsonProperty("APPLICATION_ID")
 	public int getId() {
 		return id;

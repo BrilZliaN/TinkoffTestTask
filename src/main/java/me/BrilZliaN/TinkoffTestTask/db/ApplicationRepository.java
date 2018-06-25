@@ -11,7 +11,7 @@ public interface ApplicationRepository {
 	public Integer deleteApplicationById(Application application);
 
 	public Application selectApplicationById(Integer id);
-	
+
 	public Application selectApplicationByContactId(Integer contactId);
 
 }

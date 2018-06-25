@@ -13,7 +13,7 @@ public interface ApplicationService {
 	public boolean deleteApplicationById(Application application);
 
 	public Optional<Application> getApplicationById(Integer applicationId);
-	
+
 	public Optional<Application> getApplicationByContactId(Integer contactId);
 
 }

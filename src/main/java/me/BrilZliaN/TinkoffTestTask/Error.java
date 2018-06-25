@@ -3,9 +3,9 @@ package me.BrilZliaN.TinkoffTestTask;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Error {
-	
+
 	private String errorMessage;
-	
+
 	public Error(String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
@@ -18,6 +18,5 @@ public class Error {
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
-	
-	
+
 }
