@@ -6,7 +6,7 @@ public class Error {
 
 	private String errorMessage;
 
-	public Error(String errorMessage) {
+	public Error(@JsonProperty("ERROR_MESSAGE") String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
 
