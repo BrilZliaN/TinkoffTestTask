@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.BrilZliaN.TinkoffTestTask.db.ApplicationMapper">
+    <resultMap id="application" type="me.BrilZliaN.TinkoffTestTask.Application">
+        <id property="id" column="APPLICATION_ID"/>
+        <result property="contactId" column="CONTACT_ID"/>
+        <result property="dtCreated" column="DT_CREATED"/>
+        <result property="productName" column="PRODUCT_NAME"/>
+    </resultMap>
+    
+    <insert id="insertApplication" useGeneratedKeys="true" keyProperty="APPLICATION_ID">
+        INSERT INTO
+          applications (CONTACT_ID, PRODUCT_NAME)
+        VALUES
+          (#{contactId}, #{productName})
+    </insert>
+    
+    <update id="updateApplicationById">
+        UPDATE
+          applications
+        SET
+          CONTACT_ID = #{contactId}, DT_CREATED = #{dtCreated}, PRODUCT_NAME = #{productName}
+        WHERE
+          APPLICATION_ID = #{id}
+    </update>
+
+    <delete id="deleteApplicationById">
+        DELETE FROM
+          applications
+        WHERE
+          APPLICATION_ID = #{id}
+    </delete>
+
+    <select id="selectApplicationById" resultMap="application">
+        SELECT
+          *
+        FROM
+          applications
+        WHERE
+          APPLICATION_ID = #{id}
+    </select>
+    
+    <select id="selectApplicationByContactId" resultMap="application">
+        SELECT
+          *
+        FROM
+          applications
+        WHERE
+          CONTACT_ID = #{contactId}
+        ORDER_BY
+          DT_CREATED DESC
+        LIMIT 1
+    </select>
+</mapper>
